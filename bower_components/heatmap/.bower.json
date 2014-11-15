@@ -1,0 +1,23 @@
+{
+  "name": "heatmap.js-amd",
+  "description": "Support amd for heatmap.js",
+  "main": "build/heatmap.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pa7/heatmap.js.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "homepage": "https://github.com/ikeikeikeike/heatmap.js",
+  "_release": "48958eb84a",
+  "_resolution": {
+    "type": "commit",
+    "commit": "48958eb84ab2df3fc5ca808c19559197014300f7"
+  },
+  "_source": "git@github.com:ikeikeikeike/heatmap.js.git",
+  "_target": "48958eb84ab2df3fc5ca808c19559197014300f7",
+  "_originalSource": "git@github.com:ikeikeikeike/heatmap.js.git"
+}

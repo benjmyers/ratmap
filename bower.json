@@ -1,0 +1,26 @@
+{
+  "name": "ratmap",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "2.8.x",
+    "angular": "1.3.x",
+    "jquery": "2.x.x",
+    "angular-cookies": "1.3.x",
+    "angular-resource": "1.3.x",
+    "angular-route": "1.3.x",
+    "bootstrap-sass-official": "3.2.x",
+    "underscore": "~1.7.0",
+    "leaflet": "~0.7.3",
+    "d3": "~3.4.13",
+    "leaflet-providers": "~1.0.10",
+    "leaflet.markercluster": "~0.4.0",
+    "heatmap": "git@github.com:ikeikeikeike/heatmap.js.git#48958eb84ab2df3fc5ca808c19559197014300f7"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.3.x"
+  },
+  "resolutions": {
+    "angular": "1.3.x",
+    "jquery": "2.x.x"
+  }
+}
