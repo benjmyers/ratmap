@@ -1,4 +1,30 @@
-.container {
-  margin: 0;
+$small-cluster-color: #3694d3;//#ff781f;//9a4fba;
+$medium-cluster-color: #287fb8;//#f56200;//#783993;
+$large-cluster-color: #216897;//#d35400;//#542867;
+.marker-cluster-small {
+    background-color: transparentize($small-cluster-color, 0.7);
+    div {
+        background-color: transparentize($small-cluster-color, 0.2);
+    }
+    span {
+        color: white;
+    }
 }
-#map {  }
+.marker-cluster-medium {
+    background-color: transparentize($medium-cluster-color, 0.7);
+    div {
+        background-color: transparentize($medium-cluster-color, 0.2);
+    }
+    span {
+        color: white;
+    }
+  }
+.marker-cluster-large {
+    background-color: transparentize($large-cluster-color, 0.7);
+    div {
+        background-color: transparentize($large-cluster-color, 0.2);
+    }
+    span {
+        color: white;
+    }
+}

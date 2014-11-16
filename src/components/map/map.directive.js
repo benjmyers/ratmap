@@ -19,7 +19,10 @@ directive('map', ['$window',
                     $('#map').height($(window).height());
                 }
 
-                var map = L.map('map').setView([40.712784, -74.005941], 12);
+                var map = L.map('map',{
+                  minZoom: 4,
+                  maxZoom: 20
+                }).setView([40.712784, -74.005941], 12);
 
                 // alternative themes: 'terrain' and 'watercolor'
                 var osm = L.tileLayer.provider('Esri.WorldGrayCanvas');
