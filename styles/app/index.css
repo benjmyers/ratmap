@@ -7,10 +7,6 @@ a {
 
 /** Sidebar display */
 @media (max-width: 990px) {
-  body {
-    min-height: 450px;
-    min-width: 400px;
-    overflow: auto; }
   .sidebar {
     width: 25%;
     position: fixed;
@@ -18,7 +14,6 @@ a {
     left: 0;
     bottom: 0;
     z-index: 1000;
-    min-height: 450px;
     padding: 1%;
     background: rgba(0, 0, 0, 0.8);
     color: #3694d3; }
@@ -71,7 +66,6 @@ a {
 @media (min-width: 990px) {
   .sidebar {
     width: 20%;
-    min-height: 600px;
     position: fixed;
     top: 0;
     left: 0;
