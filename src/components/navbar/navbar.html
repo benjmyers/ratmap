@@ -1,12 +1,29 @@
 <div class="sidebar">
-  <div class="header">Ratmap</div>
+  <div class="header">
+    <div class="blue">nyc</div>
+    <div class="orange">rat map</div>
+  </div>
 
-  <div class="marker-info">
-    {{selectedMarker}}
+  <div class="marker-info" ng-show="!loaded">
+    <p class="loading">Loading the latest rat data...</p>
+  </div>
+
+  <div class="marker-info" ng-show="selected">
+    <div class="event">{{selected.event}}</div>
+    <div class="date">{{selected.date}}</div>
+    <div class="address">{{selected.address}}</div>
+    <div class="city">{{selected.city}}</div>
+  </div>
+
+  <div class="marker-info" ng-show="loaded && !selected">
+    <div class="event">Department of Environmental Protection (DEP)</div>
+    <div class="date orange">Rat Sightings</div>
+    <div class="address">From {{data.minDate}} to present. This information is automatically updated daily.</div>
+     <div class="city">Zoom and click markers to explore.</div>
   </div>
 
   <div class="footer">
-    <p>2014. Meredith M Myers.</p>
+    <p>Created by <a href="https://twitter.com/meredithmmyers">@meredithmmyers</a>. 2014.</p>
   </div>
 
 </div>

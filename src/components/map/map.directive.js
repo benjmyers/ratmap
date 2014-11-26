@@ -33,46 +33,38 @@ directive('map', ['$window',
                 map.addLayer(osm);
 
                 function markerClick(d) {
-                    console.log(d)
+                    scope.$emit('marker-click', d.layer.options.item);
                 }
-                function onEachFeature(feature, layer) {
-    
-                }
+
+                var customMarker = L.Marker.extend({
+                   options: { 
+                      item: undefined
+                   }
+                });
+
                 function draw(data) {
 
                   //{lat: 33.5363, lon:-117.044, value: 1}
                     var latLngs = [];
 
                     var markers = new L.MarkerClusterGroup();
-                    var geoJson = [];
-                    _.each(data.data, function(d) {
-                        if (d[57] && d[58]) {
-                        var coords = [parseFloat(d[57]), parseFloat(d[58])];
-                        var geojsonFeature = {
-                            "type": "Feature",
-                            "properties": d,
-                            "geometry": {
-                                "type": "Point",
-                                "coordinates": coords
-                            }
-                        };
-                        geoJson.push(geojsonFeature);
-                    }
-                      // if (d[57] && d[58]) {
-                      //   var m = new L.Marker([d[57], d[58]]);
-                      //   m.on('click', markerClick);
-                      //   //m.bindPopup("<b>"+d[13]+"; "+d[14]+"</b><br>"+d[17]+" "+d[17]+"<br>"+"Location type: "+d[15])
-                      //   markers.addLayer(m);
-                      //   latLngs.push({'lat': d[57], 'lng': d[58], 'value': 1})
-                      // }
+                    _.each(data, function(d) {
+                      if (d.latitude && d.longitude) {
+                        var m = new customMarker([parseFloat(d.latitude), parseFloat(d.longitude)], {
+                            item: d
+                        });
+                        markers.addLayer(m);
+                        latLngs.push({'lat': parseFloat(d.latitude), 'lng': parseFloat(d.longitude), 'value': 1})
+                      }
                     })
-                    //map.addLayer(markers);
+                    markers.on('click', markerClick);
+                
                  var cfg = {
                      // radius should be small ONLY if scaleRadius is true (or small radius is intended)
                      "radius": 2,
                      "maxOpacity": .8,
                      // scales the radius based on map zoom
-                     "scaleRadius": false,
+                     "scaleRadius": true,
                      // if set to false the heatmap uses the global maximum for colorization
                      // if activated: uses the data maximum within the current map boundaries 
                      //   (there will always be a red spot with useLocalExtremas true)
@@ -92,20 +84,16 @@ directive('map', ['$window',
                      },
 
                  };
-                //  var heatmapLayer = new HeatmapOverlay(cfg);
-                //  map.addLayer(heatmapLayer)
+                var heatmapLayer = new HeatmapOverlay(cfg);
+                map.addLayer(heatmapLayer)
 
-                // heatmapLayer.setData({'data':latLngs});
-                // map.removeLayer(heatmapLayer);
-                L.geoJson(geoJson, {
-                    onEachFeature: function(feature, layer) {
-                        markers.addLayer(layer);
-                    }
-                });
+                heatmapLayer.setData({'data':latLngs});
+                map.removeLayer(heatmapLayer);
+
                 //
-                console.log(markers)
                 map.addLayer(markers);
-                //L.control.layers({'Markers':markers}/*, {'HeatMap':heatmapLayer}*/).addTo(map);
+                map.addLayer(heatmapLayer);
+                L.control.layers({'Markers':markers}, {'HeatMap':heatmapLayer}).addTo(map);
 
                 }
 
