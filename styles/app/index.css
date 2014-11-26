@@ -6,60 +6,124 @@ a {
   color: #D35400; }
 
 /** Sidebar display */
-.sidebar {
-  width: 20%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 1000;
-  padding: 1%;
-  background: rgba(0, 0, 0, 0.8);
-  color: #3694d3; }
-  .sidebar .header {
-    font-weight: 700;
-    text-transform: uppercase; }
-    .sidebar .header .blue {
-      font-size: 2em;
-      margin-left: 0.1em; }
-    .sidebar .header .orange {
-      font-size: 4em;
-      line-height: 0.8em; }
-  .sidebar .orange {
-    color: #D35400; }
-  .sidebar .loading {
-    margin-top: 30%;
-    margin-left: 0.1em;
-    width: 100%;
-    font-size: 0.8em;
-    text-align: center; }
-    .sidebar .loading .sk-spinner {
-      background-color: #D35400; }
-    .sidebar .loading p {
-      margin-top: 1em; }
-  .sidebar .marker-info {
-    margin-top: 30%;
-    margin-left: 0.1em;
-    width: 100%;
-    font-size: 1.3em; }
-    .sidebar .marker-info .event {
+@media (max-width: 990px) {
+  body {
+    min-height: 450px;
+    min-width: 400px;
+    overflow: auto; }
+  .sidebar {
+    width: 25%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    min-height: 450px;
+    padding: 1%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #3694d3; }
+    .sidebar .header {
       font-weight: 700;
       text-transform: uppercase; }
-    .sidebar .marker-info .date {
-      font-weight: 300;
-      font-size: 0.95em; }
-    .sidebar .marker-info .address {
-      font-size: 0.9em; }
-    .sidebar .marker-info .city {
+      .sidebar .header .blue {
+        font-size: 1.5em;
+        margin-left: 0.1em; }
+      .sidebar .header .orange {
+        font-size: 2.9em;
+        line-height: 0.8em; }
+    .sidebar .orange {
+      color: #D35400; }
+    .sidebar .loading {
+      margin-top: 30%;
+      margin-left: 0.1em;
+      width: 100%;
       font-size: 0.8em;
-      font-weight: 700; }
-  .sidebar .footer {
+      text-align: center; }
+      .sidebar .loading .sk-spinner {
+        background-color: #D35400; }
+      .sidebar .loading p {
+        margin-top: 1em; }
+    .sidebar .marker-info {
+      margin-top: 30%;
+      margin-left: 0.1em;
+      width: 100%;
+      font-size: 1em; }
+      .sidebar .marker-info .event {
+        font-weight: 700;
+        font-size: 0.7em;
+        text-transform: uppercase; }
+      .sidebar .marker-info .date {
+        font-weight: 300;
+        font-size: 0.95em; }
+      .sidebar .marker-info .address {
+        font-size: 0.9em; }
+      .sidebar .marker-info .city {
+        font-size: 0.8em;
+        font-weight: 700; }
+    .sidebar .footer {
+      width: 25%;
+      font-size: 0.7em;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      text-align: center; } }
+
+@media (min-width: 990px) {
+  .sidebar {
     width: 20%;
-    font-size: 0.8em;
+    min-height: 600px;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    text-align: center; }
+    bottom: 0;
+    z-index: 1000;
+    padding: 1%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #3694d3; }
+    .sidebar .header {
+      font-weight: 700;
+      text-transform: uppercase; }
+      .sidebar .header .blue {
+        font-size: 2em;
+        margin-left: 0.1em; }
+      .sidebar .header .orange {
+        font-size: 4em;
+        line-height: 0.8em; }
+    .sidebar .orange {
+      color: #D35400; }
+    .sidebar .loading {
+      margin-top: 30%;
+      margin-left: 0.1em;
+      width: 100%;
+      font-size: 0.8em;
+      text-align: center; }
+      .sidebar .loading .sk-spinner {
+        background-color: #D35400; }
+      .sidebar .loading p {
+        margin-top: 1em; }
+    .sidebar .marker-info {
+      margin-top: 30%;
+      margin-left: 0.1em;
+      width: 100%;
+      font-size: 1.3em; }
+      .sidebar .marker-info .event {
+        font-weight: 700;
+        text-transform: uppercase; }
+      .sidebar .marker-info .date {
+        font-weight: 300;
+        font-size: 0.95em; }
+      .sidebar .marker-info .address {
+        font-size: 0.9em; }
+      .sidebar .marker-info .city {
+        font-size: 0.8em;
+        font-weight: 700; }
+    .sidebar .footer {
+      width: 20%;
+      font-size: 0.8em;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      text-align: center; } }
 
 /** Map Styling */
 .leaflet-control-container.leaflet-left {

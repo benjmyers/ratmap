@@ -5,78 +5,158 @@ body {
 a {
     color: #D35400;
 }
-
 /** Sidebar display */
-.sidebar {
-    width: 20%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 1%;
-    background: transparentize(black, 0.2);
-    color: #3694d3;
-    .header {
-        font-weight: 700;
-        text-transform: uppercase;
-        .blue {
-            font-size: 2em;
-            margin-left: .1em;
-        }
-        .orange {
-            font-size: 4em;
-            line-height: 0.8em;
-        }
+
+@media (max-width: 990px) {
+    body {
+        min-height: 450px;
+        min-width: 400px;
+        overflow: auto;
     }
-    .orange {
-        color: #D35400;
-    }
-    .loading {
-        margin-top: 30%;
-        margin-left: .1em;
-        width: 100%;
-        font-size: 0.8em;
-        text-align: center;
-        .sk-spinner {
-            background-color: #D35400;
-        }
-        p {
-            margin-top: 1em;
-        }
-    }
-    .marker-info {
-        margin-top: 30%;
-        margin-left: .1em;
-        width: 100%;
-        font-size: 1.3em;
-        .event {
+    .sidebar {
+        width: 25%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        min-height: 450px;
+        padding: 1%;
+        background: transparentize(black, 0.2);
+        color: #3694d3;
+        .header {
             font-weight: 700;
             text-transform: uppercase;
+            .blue {
+                font-size: 1.5em;
+                margin-left: .1em;
+            }
+            .orange {
+                font-size: 2.9em;
+                line-height: 0.8em;
+            }
         }
-        .date {
-            font-weight: 300;
-            font-size: 0.95em;
+        .orange {
+            color: #D35400;
         }
-        .address {
-            font-size: 0.9em;
-        }
-        .city {
+        .loading {
+            margin-top: 30%;
+            margin-left: .1em;
+            width: 100%;
             font-size: 0.8em;
-            font-weight: 700;
+            text-align: center;
+            .sk-spinner {
+                background-color: #D35400;
+            }
+            p {
+                margin-top: 1em;
+            }
         }
-    }
-    .footer {
-        width: 20%;
-        font-size: 0.8em;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        text-align: center;
+        .marker-info {
+            margin-top: 30%;
+            margin-left: .1em;
+            width: 100%;
+            font-size: 1em;
+            .event {
+                font-weight: 700;
+                font-size: .7em;
+                text-transform: uppercase;
+            }
+            .date {
+                font-weight: 300;
+                font-size: 0.95em;
+            }
+            .address {
+                font-size: 0.9em;
+            }
+            .city {
+                font-size: 0.8em;
+                font-weight: 700;
+            }
+        }
+        .footer {
+            width: 25%;
+            font-size: 0.7em;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+        }
     }
 }
-
+@media (min-width: 990px) {
+    .sidebar {
+        width: 20%;
+        min-height: 600px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 1%;
+        background: transparentize(black, 0.2);
+        color: #3694d3;
+        .header {
+            font-weight: 700;
+            text-transform: uppercase;
+            .blue {
+                font-size: 2em;
+                margin-left: .1em;
+            }
+            .orange {
+                font-size: 4em;
+                line-height: 0.8em;
+            }
+        }
+        .orange {
+            color: #D35400;
+        }
+        .loading {
+            margin-top: 30%;
+            margin-left: .1em;
+            width: 100%;
+            font-size: 0.8em;
+            text-align: center;
+            .sk-spinner {
+                background-color: #D35400;
+            }
+            p {
+                margin-top: 1em;
+            }
+        }
+        .marker-info {
+            margin-top: 30%;
+            margin-left: .1em;
+            width: 100%;
+            font-size: 1.3em;
+            .event {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            .date {
+                font-weight: 300;
+                font-size: 0.95em;
+            }
+            .address {
+                font-size: 0.9em;
+            }
+            .city {
+                font-size: 0.8em;
+                font-weight: 700;
+            }
+        }
+        .footer {
+            width: 20%;
+            font-size: 0.8em;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+        }
+    }
+}
 /** Map Styling */
+
 $small-cluster-color: #3694d3;
 $medium-cluster-color: #287fb8;
 $large-cluster-color: #216897;
