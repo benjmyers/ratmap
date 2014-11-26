@@ -12,7 +12,7 @@ function browserSyncInit(baseDir, files, browser) {
   browser = browser === undefined ? 'default' : browser;
 
   var routes = null;
-  if(baseDir === 'src' || (util.isArray(baseDir) && baseDir.indexOf('src') !== -1)) {
+  if(baseDir === '' || (util.isArray(baseDir) && baseDir.indexOf('app') !== -1)) {
     routes = {
       // Should be '/bower_components': '../bower_components'
       // Waiting for https://github.com/shakyShane/browser-sync/issues/308
@@ -34,14 +34,14 @@ function browserSyncInit(baseDir, files, browser) {
 
 gulp.task('serve', ['watch'], function () {
   browserSyncInit([
-    'src',
+    '',
     '.tmp'
   ], [
     '.tmp/{app,components}/**/*.css',
-    'src/assets/images/**/*',
-    'src/*.html',
-    'src/{app,components}/**/*.html',
-    'src/{app,components}/**/*.js'
+    'assets/images/**/*',
+    '*.html',
+    '{app,components}/**/*.html',
+    '{app,components}/**/*.js'
   ]);
 });
 
@@ -50,7 +50,7 @@ gulp.task('serve:dist', ['build'], function () {
 });
 
 gulp.task('serve:e2e', function () {
-  browserSyncInit(['src', '.tmp'], null, []);
+  browserSyncInit(['', '.tmp'], null, []);
 });
 
 gulp.task('serve:e2e-dist', ['watch'], function () {
