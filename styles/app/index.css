@@ -1,0 +1,85 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0px; }
+
+a {
+  color: #D35400; }
+
+.sidebar {
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: 1%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #3694d3; }
+  .sidebar .header {
+    font-weight: 700;
+    text-transform: uppercase; }
+    .sidebar .header .blue {
+      font-size: 2em;
+      margin-left: 0.1em; }
+    .sidebar .header .orange {
+      font-size: 4em;
+      line-height: 0.8em; }
+  .sidebar .orange {
+    color: #D35400; }
+  .sidebar .loading {
+    margin-top: 30%;
+    margin-left: 0.1em;
+    width: 100%;
+    font-size: 0.8em;
+    text-align: center; }
+    .sidebar .loading .sk-spinner {
+      background-color: #D35400; }
+    .sidebar .loading p {
+      margin-top: 1em; }
+  .sidebar .marker-info {
+    margin-top: 30%;
+    margin-left: 0.1em;
+    width: 100%;
+    font-size: 1.3em; }
+    .sidebar .marker-info .event {
+      font-weight: 700;
+      text-transform: uppercase; }
+    .sidebar .marker-info .date {
+      font-weight: 300;
+      font-size: 0.95em; }
+    .sidebar .marker-info .address {
+      font-size: 0.9em; }
+    .sidebar .marker-info .city {
+      font-size: 0.8em;
+      font-weight: 700; }
+  .sidebar .footer {
+    width: 20%;
+    font-size: 0.8em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center; }
+
+.leaflet-control-container.leaflet-left {
+  right: 0; }
+
+.marker-cluster-small {
+  background-color: rgba(54, 148, 211, 0.3); }
+  .marker-cluster-small div {
+    background-color: rgba(54, 148, 211, 0.8); }
+  .marker-cluster-small span {
+    color: white; }
+
+.marker-cluster-medium {
+  background-color: rgba(40, 127, 184, 0.3); }
+  .marker-cluster-medium div {
+    background-color: rgba(40, 127, 184, 0.8); }
+  .marker-cluster-medium span {
+    color: white; }
+
+.marker-cluster-large {
+  background-color: rgba(33, 104, 151, 0.3); }
+  .marker-cluster-large div {
+    background-color: rgba(33, 104, 151, 0.8); }
+  .marker-cluster-large span {
+    color: white; }
