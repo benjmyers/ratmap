@@ -1,6 +1,42 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+}
+
+.sidebar {
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 1%;
+    background: transparentize(black, 0.2);
+    color: #3694d3;
+    .header {
+        font-size: 3em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .marker-info {
+
+    }
+    .footer {
+        width: 20%;
+        font-size: 0.8em;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+}
+
 $small-cluster-color: #3694d3;//#ff781f;//9a4fba;
 $medium-cluster-color: #287fb8;//#f56200;//#783993;
 $large-cluster-color: #216897;//#d35400;//#542867;
+.leaflet-control-container.leaflet-left {
+    right: 0;
+}
 .marker-cluster-small {
     background-color: transparentize($small-cluster-color, 0.7);
     div {
