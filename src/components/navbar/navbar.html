@@ -4,13 +4,15 @@
     <div class="orange">rat map</div>
   </div>
 
-  <div class="marker-info" ng-show="!loaded">
-    <p class="loading">Loading the latest rat data...</p>
+  <div class="loading" ng-hide="loaded">
+    <div class="sk-spinner sk-spinner-rotating-plane"></div>
+    <p>Loading the latest rat data.</p>
   </div>
 
   <div class="marker-info" ng-show="selected">
-    <div class="event">{{selected.event}}</div>
+    <div class="event orange">{{selected.event}}</div>
     <div class="date">{{selected.date}}</div>
+    <div class="city">{{selected.type}}</div>
     <div class="address">{{selected.address}}</div>
     <div class="city">{{selected.city}}</div>
   </div>

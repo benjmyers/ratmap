@@ -84,16 +84,15 @@ directive('map', ['$window',
                      },
 
                  };
-                var heatmapLayer = new HeatmapOverlay(cfg);
-                map.addLayer(heatmapLayer)
+                // var heatmapLayer = new HeatmapOverlay(cfg);
+                // map.addLayer(heatmapLayer)
 
-                heatmapLayer.setData({'data':latLngs});
-                map.removeLayer(heatmapLayer);
+                // heatmapLayer.setData({'data':latLngs});
+                // map.removeLayer(heatmapLayer);
 
-                //
-                map.addLayer(markers);
-                map.addLayer(heatmapLayer);
-                L.control.layers({'Markers':markers}, {'HeatMap':heatmapLayer}).addTo(map);
+                 map.addLayer(markers);
+                // map.addLayer(heatmapLayer);
+                //L.control.layers({'Markers':markers}, {'HeatMap':heatmapLayer}).addTo(map);
 
                 }
 

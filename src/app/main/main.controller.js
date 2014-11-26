@@ -3,7 +3,7 @@
 angular.module('ratmap')
   .controller('MainCtrl', function ($scope, $http, $timeout) {
 
-      $http.get('http://data.cityofnewyork.us/resource/3q43-55fe?$limit=5000', {
+      $http.get('http://data.cityofnewyork.us/resource/3q43-55fe?$limit=10000', {
         cache: true
       }).
         success(function(data, status, headers, config) {
@@ -22,6 +22,7 @@ angular.module('ratmap')
           var item = {
             'event': m.descriptor,
             'date': date,
+            'type': m.location_type,
             'address': address,
             'city': city
           };
@@ -32,10 +33,14 @@ angular.module('ratmap')
         });
 
         function makeAddress(m) {
-          if (m.location_type === "INTERSECTION")
-            return setCases(m.cross_street_1) + " & " + setCases(cross_street_2);
-          else 
+          if (m.cross_street_1 && m.cross_street_2)
+            return setCases(m.cross_street_1) + " & " + setCases(m.cross_street_2);
+          else if (m.intersection_street_1 && m.intersection_street_2)
+            return setCases(m.intersection_street_1) + " & " + setCases(m.intersection_street_2);
+          else if (m.incident_address)
             return setCases(m.incident_address);
+          else
+            console.log(m)
         }
 
         function formatCity(m) {

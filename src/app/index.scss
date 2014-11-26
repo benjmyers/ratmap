@@ -31,6 +31,19 @@ a {
     .orange {
         color: #D35400;
     }
+    .loading {
+        margin-top: 30%;
+        margin-left: .1em;
+        width: 100%;
+        font-size: 0.8em;
+        text-align: center;
+        .sk-spinner {
+            background-color: #D35400;
+        }
+        p {
+            margin-top: 1em;
+        }
+    }
     .marker-info {
         margin-top: 30%;
         margin-left: .1em;
