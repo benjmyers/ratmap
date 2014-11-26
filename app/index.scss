@@ -6,6 +6,7 @@ a {
     color: #D35400;
 }
 
+/** Sidebar display */
 .sidebar {
     width: 20%;
     position: fixed;
@@ -75,6 +76,7 @@ a {
     }
 }
 
+/** Map Styling */
 $small-cluster-color: #3694d3;
 $medium-cluster-color: #287fb8;
 $large-cluster-color: #216897;
@@ -98,7 +100,7 @@ $large-cluster-color: #216897;
     span {
         color: white;
     }
-  }
+}
 .marker-cluster-large {
     background-color: transparentize($large-cluster-color, 0.7);
     div {

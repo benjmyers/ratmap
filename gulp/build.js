@@ -16,7 +16,7 @@ gulp.task('styles', ['wiredep'],  function () {
     .pipe($.sass({style: 'expanded'}))
     .on('error', handleError)
     .pipe($.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('.tmp'))
+    .pipe(gulp.dest('styles'))
     .pipe($.size());
 });
 
