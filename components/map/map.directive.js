@@ -21,7 +21,7 @@ directive('map', ['$window',
 
                 var map = L.map('map',{
                   minZoom: 4,
-                  maxZoom: 20,
+                  maxZoom: 17,
                   zoomControl: false
                 }).setView([40.712784, -74.005941], 12);
 
