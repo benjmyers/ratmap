@@ -44,9 +44,7 @@ directive('map', ['$window',
 
                 function draw(data) {
 
-                  //{lat: 33.5363, lon:-117.044, value: 1}
                     var latLngs = [];
-
                     var markers = new L.MarkerClusterGroup();
                     _.each(data, function(d) {
                       if (d.latitude && d.longitude) {
@@ -58,40 +56,9 @@ directive('map', ['$window',
                       }
                     })
                     markers.on('click', markerClick);
-                
-                 var cfg = {
-                     // radius should be small ONLY if scaleRadius is true (or small radius is intended)
-                     "radius": 2,
-                     "maxOpacity": .8,
-                     // scales the radius based on map zoom
-                     "scaleRadius": true,
-                     // if set to false the heatmap uses the global maximum for colorization
-                     // if activated: uses the data maximum within the current map boundaries 
-                     //   (there will always be a red spot with useLocalExtremas true)
-                     "useLocalExtrema": false,
-                     // which field name in your data represents the latitude - default "lat"
-                     latField: 'lat',
-                     // which field name in your data represents the longitude - default "lng"
-                     lngField: 'lng',
-                     // which field name in your data represents the data value - default "value"
-                     valueField: 'value',
-                     gradient: {
-                         // enter n keys between 0 and 1 here
-                         // for gradient color customization
-                         '.1': 'blue',
-                         '.5': 'lime',
-                         '.7': 'red'
-                     },
-
-                 };
-                // var heatmapLayer = new HeatmapOverlay(cfg);
-                // map.addLayer(heatmapLayer)
-
-                // heatmapLayer.setData({'data':latLngs});
-                // map.removeLayer(heatmapLayer);
 
                  map.addLayer(markers);
-                // map.addLayer(heatmapLayer);
+
                 //L.control.layers({'Markers':markers}, {'HeatMap':heatmapLayer}).addTo(map);
 
                 }
