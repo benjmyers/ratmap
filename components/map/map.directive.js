@@ -45,23 +45,29 @@ directive('map', ['$window',
                 function draw(data) {
                     // {lat: 33.5363, lon:-117.044, value: 1}
                     var latLngs = [];
-                    var sum = {};
                     var markers = new L.MarkerClusterGroup();
-
                     _.each(data, function(d) {
                       if (d.latitude && d.longitude) {
                         var m = new customMarker([parseFloat(d.latitude), parseFloat(d.longitude)], {
                             item: d
                         });
                         markers.addLayer(m);
-                        //latLngs.push({'lat': parseFloat(d.latitude), 'lng': parseFloat(d.longitude), 'count': 1})
-                        latLngs.push([parseFloat(d.latitude), parseFloat(d.longitude), 1]);
+                        latLngs.push([parseFloat(d.latitude), parseFloat(d.longitude)]);
                       }
-                    })
+                    });
                     markers.on('click', markerClick);
 
                  //map.addLayer(markers);
-                 var heat = L.heatLayer(latLngs, {radius: 25}).addTo(map);
+                 // #dc7633
+                 var heat = L.heatLayer(latLngs, {
+                     radius: 18,
+                     gradient: {
+                         0.4: '#1b5479', // #f6ddcc',
+                         0.65: '#d4e6f1',//#e59866',
+                         1: '#D35400'
+                     }
+                 }).addTo(map);
+
 
               L.control.layers({
                   'Markers': markers
