@@ -27,17 +27,31 @@ directive('map', ['$window',
 
                 new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
-                // alternative themes: 'terrain' and 'watercolor'
-                var osm = L.tileLayer.provider('Esri.WorldGrayCanvas');
+                // alternative themes: 'terrain' and 'watercolor'.
+                var canvas = L.tileLayer.provider('Esri.WorldGrayCanvas');
 
-                map.addLayer(osm);
+                map.addLayer(canvas);
+
+                // create the geocoding control and add it to the map
+                var searchControl = new L.esri.Geocoding.Controls.Geosearch({ position: 'topright' }).addTo(map);
+
+                // create an empty layer group to store the results and add it to the map
+                var results = new L.LayerGroup().addTo(map);
+
+                // listen for the results event and add every result to the map
+                searchControl.on("results", function(data) {
+                    results.clearLayers();
+                    for (var i = data.results.length - 1; i >= 0; i--) {
+                        results.addLayer(L.marker(data.results[i].latlng));
+                    };
+                });
 
                 function markerClick(d) {
                     scope.$emit('marker-click', d.layer.options.item);
                 }
 
                 var customMarker = L.Marker.extend({
-                   options: { 
+                   options: {
                       item: undefined
                    }
                 });
