@@ -1,0 +1,22 @@
+{
+  "name": "esri-leaflet-geocoder",
+  "version": "1.0.0-rc.2",
+  "main": "dist/esri-leaflet-geocoder.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "spec",
+    "debug"
+  ],
+  "homepage": "https://github.com/Esri/esri-leaflet-geocoder",
+  "_release": "1.0.0-rc.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0-rc.2",
+    "commit": "da1493ed3cdde7c093847178c21fe3476d808da1"
+  },
+  "_source": "git://github.com/Esri/esri-leaflet-geocoder.git",
+  "_target": "~1.0.0-rc.2",
+  "_originalSource": "esri-leaflet-geocoder"
+}
