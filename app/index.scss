@@ -1,9 +1,18 @@
+$darkblue: #1b5479;
+$orange: #D35400;
+$blue: #3694d3;
+$small-cluster-color: $blue;
+$medium-cluster-color: #287fb8;
+$large-cluster-color: #216897;
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0px;
 }
 a {
-    color: #D35400;
+    color: $orange;
+}
+hr {
+    border-top: 1px solid $darkblue;
 }
 /** Sidebar display */
 
@@ -17,7 +26,7 @@ a {
         z-index: 1000;
         padding: 1%;
         background: transparentize(black, 0.2);
-        color: #3694d3;
+        color: $blue;
         .header {
             font-weight: 700;
             text-transform: uppercase;
@@ -31,7 +40,7 @@ a {
             }
         }
         .orange {
-            color: #D35400;
+            color: $orange;
         }
         .loading {
             margin-top: 30%;
@@ -40,14 +49,14 @@ a {
             font-size: 0.8em;
             text-align: center;
             .sk-spinner {
-                background-color: #D35400;
+                background-color: $orange;
             }
             p {
                 margin-top: 1em;
             }
         }
         .marker-info {
-            margin-top: 30%;
+            //margin-top: 30%;
             margin-left: .1em;
             width: 100%;
             font-size: 1em;
@@ -66,6 +75,33 @@ a {
             .city {
                 font-size: 0.8em;
                 font-weight: 700;
+            }
+        }
+        .controls {
+            margin-left: .1em;
+            width: 100%;
+            font-size: .8em;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+            padding-bottom: 20%;
+            .lbl {
+                font-size: 0.8em;
+                font-weight: 300;
+                padding-bottom: 1%;
+            }
+            .showing {
+                color: $orange;
+            }
+            a {
+                color: $darkblue;
+                padding-top: .1em;
+                padding-bottom: .1em;
+            }
+            a:hover, a:focus {
+                color: $blue;
+                text-decoration: none;
             }
         }
         .footer {
@@ -88,7 +124,7 @@ a {
         z-index: 1000;
         padding: 1%;
         background: transparentize(black, 0.2);
-        color: #3694d3;
+        color: $blue;
         .header {
             font-weight: 700;
             text-transform: uppercase;
@@ -102,7 +138,7 @@ a {
             }
         }
         .orange {
-            color: #D35400;
+            color: $orange;
         }
         .loading {
             margin-top: 30%;
@@ -111,7 +147,7 @@ a {
             font-size: 0.8em;
             text-align: center;
             .sk-spinner {
-                background-color: #D35400;
+                background-color: $orange;
             }
             p {
                 margin-top: 1em;
@@ -138,6 +174,30 @@ a {
                 font-weight: 700;
             }
         }
+        .controls {
+            margin-left: .1em;
+            width: 100%;
+            font-size: 1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            .lbl {
+                font-size: 0.8em;
+                font-weight: 300;
+                padding-bottom: 1%;
+            }
+            .showing {
+                color: $orange;
+            }
+            a {
+                color: $darkblue;
+            }
+            a:hover, a:focus {
+                color: $blue;
+                text-decoration: none;
+            }
+        }
         .footer {
             width: 20%;
             font-size: 0.8em;
@@ -150,9 +210,6 @@ a {
 }
 /** Map Styling */
 
-$small-cluster-color: #3694d3;
-$medium-cluster-color: #287fb8;
-$large-cluster-color: #216897;
 .leaflet-control-container.leaflet-left {
     right: 0;
 }
@@ -182,4 +239,33 @@ $large-cluster-color: #216897;
     span {
         color: white;
     }
+}
+/** Link effect styling */
+
+.cl-effect-1 a::before, .cl-effect-1 a::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.cl-effect-1 a::before {
+    margin-right: 10px;
+    content: '[';
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    transform: translateX(20px);
+}
+.cl-effect-1 a::after {
+    margin-left: 10px;
+    content: ']';
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+}
+.cl-effect-1 a:hover::before, .cl-effect-1 a:hover::after, .cl-effect-1 a:focus::before, .cl-effect-1 a:focus::after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
 }

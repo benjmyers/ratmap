@@ -5,6 +5,9 @@ body {
 a {
   color: #D35400; }
 
+hr {
+  border-top: 1px solid #1b5479; }
+
 /** Sidebar display */
 @media (max-width: 990px) {
   .sidebar {
@@ -39,7 +42,6 @@ a {
       .sidebar .loading p {
         margin-top: 1em; }
     .sidebar .marker-info {
-      margin-top: 30%;
       margin-left: 0.1em;
       width: 100%;
       font-size: 1em; }
@@ -55,6 +57,28 @@ a {
       .sidebar .marker-info .city {
         font-size: 0.8em;
         font-weight: 700; }
+    .sidebar .controls {
+      margin-left: 0.1em;
+      width: 100%;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      padding-bottom: 20%; }
+      .sidebar .controls .lbl {
+        font-size: 0.8em;
+        font-weight: 300;
+        padding-bottom: 1%; }
+      .sidebar .controls .showing {
+        color: #D35400; }
+      .sidebar .controls a {
+        color: #1b5479;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em; }
+      .sidebar .controls a:hover, .sidebar .controls a:focus {
+        color: #3694d3;
+        text-decoration: none; }
     .sidebar .footer {
       width: 25%;
       font-size: 0.7em;
@@ -111,6 +135,25 @@ a {
       .sidebar .marker-info .city {
         font-size: 0.8em;
         font-weight: 700; }
+    .sidebar .controls {
+      margin-left: 0.1em;
+      width: 100%;
+      font-size: 1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer; }
+      .sidebar .controls .lbl {
+        font-size: 0.8em;
+        font-weight: 300;
+        padding-bottom: 1%; }
+      .sidebar .controls .showing {
+        color: #D35400; }
+      .sidebar .controls a {
+        color: #1b5479; }
+      .sidebar .controls a:hover, .sidebar .controls a:focus {
+        color: #3694d3;
+        text-decoration: none; }
     .sidebar .footer {
       width: 20%;
       font-size: 0.8em;
@@ -143,3 +186,27 @@ a {
     background-color: rgba(33, 104, 151, 0.8); }
   .marker-cluster-large span {
     color: white; }
+
+/** Link effect styling */
+.cl-effect-1 a::before, .cl-effect-1 a::after {
+  display: inline-block;
+  opacity: 0;
+  transition: -webkit-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s; }
+
+.cl-effect-1 a::before {
+  margin-right: 10px;
+  content: '[';
+  -webkit-transform: translateX(20px);
+  transform: translateX(20px); }
+
+.cl-effect-1 a::after {
+  margin-left: 10px;
+  content: ']';
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px); }
+
+.cl-effect-1 a:hover::before, .cl-effect-1 a:hover::after, .cl-effect-1 a:focus::before, .cl-effect-1 a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px); }

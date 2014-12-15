@@ -7,6 +7,7 @@ directive('map', ['$window',
                 data: "="
             },
             link: function(scope, element, attrs) {
+                var map, heat, markers, heatmapShowing = true, markersShowing = true;
 
                 $('#map').height($(window).height());
 
@@ -15,11 +16,32 @@ directive('map', ['$window',
                     draw(newVal);
                 });
 
+                scope.$on('toggle-display', function(ev, type) {
+                  if (map && heat && markers) {
+                    switch(type) {
+                      case "heatmap":
+                        if (heatmapShowing)
+                          map.removeLayer(heat);
+                        else
+                          map.addLayer(heat);
+                        heatmapShowing = !heatmapShowing;
+                        return;
+                      case "markers":
+                        if (markersShowing)
+                          map.removeLayer(markers);
+                        else
+                          map.addLayer(markers);
+                        markersShowing = !markersShowing;
+                        return;
+                    }
+                  }
+                })
+
                 $window.onresize = function(event) {
                     $('#map').height($(window).height());
                 }
 
-                var map = L.map('map',{
+                map = L.map('map',{
                   minZoom: 4,
                   maxZoom: 17,
                   zoomControl: false
@@ -43,9 +65,8 @@ directive('map', ['$window',
                 });
 
                 function draw(data) {
-                    // {lat: 33.5363, lon:-117.044, value: 1}
                     var latLngs = [];
-                    var markers = new L.MarkerClusterGroup();
+                    markers = new L.MarkerClusterGroup();
                     _.each(data, function(d) {
                       if (d.latitude && d.longitude) {
                         var m = new customMarker([parseFloat(d.latitude), parseFloat(d.longitude)], {
@@ -57,27 +78,22 @@ directive('map', ['$window',
                     });
                     markers.on('click', markerClick);
 
-                 //map.addLayer(markers);
-                 // #dc7633
-                 var heat = L.heatLayer(latLngs, {
-                     radius: 18,
+                 if (markersShowing)
+                  map.addLayer(markers);
+                
+                 heat = L.heatLayer(latLngs, {
+                     radius: 16,
                      gradient: {
-                         0.4: '#1b5479', // #f6ddcc',
-                         0.65: '#d4e6f1',//#e59866',
+                         0.4: '#1b5479',
+                         0.65: '#d4e6f1',
                          1: '#D35400'
                      }
-                 }).addTo(map);
+                 });
 
-
-              L.control.layers({
-                  'Markers': markers
-              }, {
-                  'HeatMap': heat
-              }).addTo(map);
-
+                 if (heatmapShowing)
+                  map.addLayer(heat);
 
                 }
-
             }
         }
     }

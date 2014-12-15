@@ -32,6 +32,10 @@ angular.module('ratmap')
           },1);
         });
 
+        $scope.show = function(type) {
+          $scope.$broadcast('toggle-display', type);
+        }
+
         function makeAddress(m) {
           if (m.cross_street_1 && m.cross_street_2)
             return setCases(m.cross_street_1) + " & " + setCases(m.cross_street_2);

@@ -3,10 +3,18 @@
     <div class="blue">nyc</div>
     <div class="orange">rat map</div>
   </div>
-
+  <hr>
   <div class="loading" ng-hide="loaded">
     <div class="sk-spinner sk-spinner-rotating-plane"></div>
     <p>Loading the latest rat data.</p>
+  </div>
+
+  <div class="controls" ng-show="loaded">
+    <div class="lbl">display as</div>
+    <nav class="cl-effect-1" id="cl-effect-1">
+      <a ng-click="show('markers'); mShow=!mShow;" ng-class="{'showing': !mShow}">Markers</a>
+      <a ng-click="show('heatmap'); hShow=!hShow;" ng-class="{'showing': !hShow}">Heatmap</a>
+    </nav>
   </div>
 
   <div class="marker-info" ng-show="selected">
