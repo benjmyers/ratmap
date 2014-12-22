@@ -71,20 +71,24 @@ directive('map', ['$window',
                 function markerClick(d) {
                     scope.$emit('marker-click', d.layer.options.item);
                 }
-
                 var customMarker = L.Marker.extend({
                    options: {
                       item: undefined
                    }
                 });
-
+                var myIcon = L.icon({ 
+                    iconUrl: 'assets/images/marker.svg', 
+                    shadowSize: [0, 0],
+                    iconSize: [38, 95]
+                });
                 function draw(data) {
                     var latLngs = [];
                     markers = new L.MarkerClusterGroup();
                     _.each(data, function(d) {
                       if (d.latitude && d.longitude) {
                         var m = new customMarker([parseFloat(d.latitude), parseFloat(d.longitude)], {
-                            item: d
+                            item: d,
+                            icon: myIcon
                         });
                         markers.addLayer(m);
                         latLngs.push([parseFloat(d.latitude), parseFloat(d.longitude)]);
