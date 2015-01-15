@@ -1,37 +1,36 @@
 <div class="sidebar">
-  <div class="header">
-    <div class="blue">nyc</div>
-    <div class="orange">rat map</div>
-  </div>
+    <div class="header">
+        <div class="blue">nyc</div>
+        <div class="orange">rat map</div>
+    </div>
 
-  <div class="loading" ng-hide="loaded">
-    <div class="sk-spinner sk-spinner-rotating-plane"></div>
-    <p>Loading the latest rat data.</p>
-  </div>
+    <div class="loading" ng-hide="loaded">
+        <div class="sk-spinner sk-spinner-rotating-plane"></div>
+        <p>Loading the latest rat data.</p>
+    </div>
 
-  <div class="controls" ng-show="loaded">
-      <div ng-model="mShow" class="switch" ng-class="{'showing': mShow}" ng-click="show('markers'); mShow=!mShow;">Markers</div>
-      <div ng-model="hShow" class="switch" ng-class="{'showing': hShow}" ng-click="show('heatmap'); hShow=!hShow;">Heatmap</div>
-  </div>
+    <div class="controls" ng-show="loaded">
+        <div ng-model="mShow" class="switch" ng-class="{'showing': mShow}" ng-click="show('markers'); mShow=!mShow;">Markers</div>
+        <div ng-model="hShow" class="switch" ng-class="{'showing': hShow}" ng-click="show('heatmap'); hShow=!hShow;">Heatmap</div>
+    </div>
 
-  <div class="marker-info" ng-show="selected">
-    <div class="city">{{selected.type}}</div>
-    <div class="event orange">{{selected.event}}</div>
-    <div class="date">{{selected.date}}</div>
-    <div class="address">{{selected.address}}</div>
-    <div class="city">{{selected.city}}</div>
-  </div>
+    <div class="marker-info" ng-show="selected">
+        <div class="city">{{selected.type}}</div>
+        <div class="event orange">{{selected.event}}</div>
+        <div class="date">{{selected.date}}</div>
+        <div class="address">{{selected.address}}</div>
+        <div class="city">{{selected.city}}</div>
+    </div>
 
-  <div class="marker-info" ng-show="loaded && !selected">
-    <div class="event">Department of Environmental Protection (DEP)</div>
-    <div class="date orange">Rat Sightings</div>
-    <div class="address">From {{data.minDate}} to present. This information is automatically updated daily.</div>
-     <div class="city">Zoom and click markers to explore.</div>
-  </div>
+    <div class="marker-info" ng-show="loaded && !selected">
+        <div class="event">Department of Environmental Protection (DEP)</div>
+        <div class="date orange">Rat Sightings</div>
+        <div class="address">From {{data.minDate}} to present. This information is automatically updated daily.</div>
+        <div class="city">Zoom and click markers to explore.</div>
+    </div>
 
-  <div class="footer">
-   <p>An <a href="https://github.com/meredithmmyers/ratmap">open source</a> project.</p>
-    <p>Created by <a href="https://twitter.com/meredithmmyers">@meredithmmyers</a>. 2014.</p>
-  </div>
-
+    <div class="footer">
+        <p>An <a href="https://github.com/meredithmmyers/ratmap">open source</a> project.</p>
+        <p>Created by <a href="https://twitter.com/meredithmmyers">@meredithmmyers</a>. 2014.</p>
+    </div>
 </div>
