@@ -8,6 +8,16 @@ a {
 hr {
   border-top: 1px solid #1b5479; }
 
+.switch {
+  display: inline-block;
+  margin: 4px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ddd; }
+  .switch.showing {
+    background-color: #287fb8; }
+
 /** Sidebar display */
 @media (max-width: 990px) {
   .sidebar {
@@ -22,7 +32,8 @@ hr {
     color: #3694d3; }
     .sidebar .header {
       font-weight: 700;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin-bottom: 15%; }
       .sidebar .header .blue {
         font-size: 1.5em;
         margin-left: 0.1em; }
@@ -58,20 +69,17 @@ hr {
         font-size: 0.8em;
         font-weight: 700; }
     .sidebar .controls {
-      margin-left: 0.1em;
       width: 100%;
       font-size: 0.8em;
       text-transform: uppercase;
       font-weight: 700;
       text-align: left;
       cursor: pointer;
-      padding-bottom: 20%; }
+      padding-bottom: 15%; }
       .sidebar .controls .lbl {
         font-size: 0.8em;
         font-weight: 300;
         padding-bottom: 1%; }
-      .sidebar .controls .showing {
-        color: #D35400; }
       .sidebar .controls a {
         color: #1b5479;
         padding-top: 0.1em;
@@ -100,7 +108,8 @@ hr {
     color: #3694d3; }
     .sidebar .header {
       font-weight: 700;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin-bottom: 15%; }
       .sidebar .header .blue {
         font-size: 2em;
         margin-left: 0.1em; }
@@ -136,7 +145,6 @@ hr {
         font-size: 0.8em;
         font-weight: 700; }
     .sidebar .controls {
-      margin-left: 0.1em;
       width: 100%;
       font-size: 1em;
       text-transform: uppercase;
@@ -147,8 +155,6 @@ hr {
         font-size: 0.8em;
         font-weight: 300;
         padding-bottom: 1%; }
-      .sidebar .controls .showing {
-        color: #D35400; }
       .sidebar .controls a {
         color: #1b5479; }
       .sidebar .controls a:hover, .sidebar .controls a:focus {

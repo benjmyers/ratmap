@@ -14,6 +14,17 @@ a {
 hr {
     border-top: 1px solid $darkblue;
 }
+.switch {
+    display: inline-block;
+    margin: 4px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    background-color: transparentize(white, 0.8);
+    color: #ddd;
+    &.showing {
+        background-color: $medium-cluster-color;
+    }
+}
 /** Sidebar display */
 
 @media (max-width: 990px) {
@@ -30,6 +41,7 @@ hr {
         .header {
             font-weight: 700;
             text-transform: uppercase;
+            margin-bottom: 15%;
             .blue {
                 font-size: 1.5em;
                 margin-left: .1em;
@@ -78,21 +90,17 @@ hr {
             }
         }
         .controls {
-            margin-left: .1em;
             width: 100%;
             font-size: .8em;
             text-transform: uppercase;
             font-weight: 700;
             text-align: left;
             cursor: pointer;
-            padding-bottom: 20%;
+            padding-bottom: 15%;
             .lbl {
                 font-size: 0.8em;
                 font-weight: 300;
                 padding-bottom: 1%;
-            }
-            .showing {
-                color: $orange;
             }
             a {
                 color: $darkblue;
@@ -128,6 +136,7 @@ hr {
         .header {
             font-weight: 700;
             text-transform: uppercase;
+            margin-bottom: 15%;
             .blue {
                 font-size: 2em;
                 margin-left: .1em;
@@ -175,7 +184,6 @@ hr {
             }
         }
         .controls {
-            margin-left: .1em;
             width: 100%;
             font-size: 1em;
             text-transform: uppercase;
@@ -186,9 +194,6 @@ hr {
                 font-size: 0.8em;
                 font-weight: 300;
                 padding-bottom: 1%;
-            }
-            .showing {
-                color: $orange;
             }
             a {
                 color: $darkblue;

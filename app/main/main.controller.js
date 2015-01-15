@@ -2,7 +2,8 @@
 
 angular.module('ratmap')
   .controller('MainCtrl', function ($scope, $http, $timeout) {
-
+      $scope.hShow = true;
+      $scope.mShow = true;
       $http.get('http://data.cityofnewyork.us/resource/3q43-55fe?$limit=10000', {
         cache: true
       }).
