@@ -11,7 +11,7 @@ angular.module('ratmap')
       // ----------------------------- Data Request -----------------------------------
       // ------------------------------------------------------------------------------
 
-      $http.get('http://data.cityofnewyork.us/resource/3q43-55fe?$limit=10000', {
+      $http.get('https://data.cityofnewyork.us/resource/3q43-55fe?$limit=10000', {
         cache: true
       }).
         success(function(data, status, headers, config) {

@@ -3,7 +3,7 @@
 describe('The main view', function () {
 
   beforeEach(function () {
-    browser.get('http://localhost:3000/index.html');
+    browser.get('https://localhost:3000/index.html');
   });
 
   it('list more than 5 awesome things', function () {
